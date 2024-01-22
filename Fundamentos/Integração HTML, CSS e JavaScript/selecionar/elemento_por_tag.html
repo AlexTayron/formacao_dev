@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="../css/estilo.css">
+</head>
+<body id="exercicio">
+    <div id="primeiro">#primeiro</div>
+    <div id="segundo">#segundo</div>
+    <div id="terceiro">#terceiro</div>
+    <div id="quarto">#quarto</div>
+    <div id="quinto">#quinto</div>
+
+    <script>
+        const divs = document.getElementsByTagName('div')
+
+        for(const elemento of divs){
+            elemento.classList.add('destaque')
+        }
+
+        Array.from(divs).forEach((el, i) => {
+            el.classList.remove('destaque')
+        })
+        Array.from(divs).forEach((el, i) => {
+            if(i % 2 === 1){
+                el.classList.remove('destaque')
+            }
+        })
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="../css/estilo.css">
+</head>
+
+<body id="exercicio">
+    <main class="coluna">
+        <p>Paragrafo #01</p>
+        <article>
+            <p>Paragrafo #02</p>
+        </article>
+        <p>Paragrafo #03</p>
+        <article>
+            <p>Paragrafo #04</p>
+        </article>
+        <article>
+            <p>Paragrafo #05</p>
+        </article>
+    </main>
+
+    <script>
+        //0. Os paragrafos que estão fora da tag <article>
+        //1. Adicionar o texto [fora] no início do conteudo
+        //2. Adicionar a classe "destaque" 
+        /* const paragrafos = Array.from(document.querySelectorAll('p'))
+        const paragrafosEmArtigos = Array.from(document.querySelectorAll('article p'))
+        const paragrafosForaArtigo = paragrafos.filter(p => !paragrafosEmArtigos.includes(p)) 
+
+        paragrafosForaArtigo.forEach(p => p.textContent = `[fora]  ${p.textContent} `)   */
+
+        document.querySelectorAll(':not(article) > p').forEach(p => {
+            p.classListe.add('destaque')
+            p.textContent = `[fora]  ${p.textContent} `
+        })
+
+    </script>
+
+</body>
+
+</html>
